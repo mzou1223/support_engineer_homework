@@ -1,27 +1,44 @@
-# Support Engineer Homework
+# Support Engineer Homework Overview
+This Smartrr Support Engineer Javacript portion of the project is completed in a CLI format using Node.js and npm. Please check that these are installed on your machine prior to running this application. The CLI prompts and functions were completed in one file, functions.js, for the reviewer's ease of access and efficiency.
 
-1. Fork this repository.
-2. Use the [test data](https://docs.google.com/spreadsheets/d/1uyDXhb3T3-LVywTvpH1ixWbz6if7vUaUQC6YHcNm-wY/edit?usp=sharing) to answer the questions below. The test data is in CSV form in two tabs. Each tab represents a table:
-   - organzation
-   - account 
-4. Add all SQL and JavaScript files to your fork.
-5. Write a README explaining how to run your application.
-6. Push up your submission and let us know where to find it.
+## How to Run This Application:
 
-## Questions:
+**Javascript Portion**
+Assuming that you have cloned this repository, please navigate to the project directory (support_engineer_homework) to begin.
+1. npm i to install all the dependencies.
+2. node functions.js to run the CLI application. 
+3. Follow the prompt and type in the choices you want to make. 
+4. Press enter to get the results. 
 
-Use JS and SQL to answer the following questions.
+Note: If you want to exit, type in 'no' to the prompt that asks if you want to run another report.
 
-**JavaScript**
-- Write a JavaScript application. The app can be a CLI or web-based app. It should provide a user with the options to run four reports:
-  1. Takes the value of a `myShopifyDomain` field as an input and returns their `optimization` settings.
-  2. Loops through all organizations and shows the date they were created (DD/MM/YYYY), their `status`, and `planName` sorted by oldest to newest.
-  3. Returns the list of organizations whose status is cancelled.
-  4. Takes the value of an `orgName` and returns the organization record in JSON format.
+**SQL Portion**
+Use your SQL schema to test the queries located in sqlQueries.sql. These are compromised based on the assumption that there is a table named "organization" for the organization_orm and a table named "account" for the account_plan_orm.
 
-**SQL**
-- Write SQL queries to return:
-  - How many organizations do not have account plans? 
-  - How many organizations have more than one account plan?
-  - List all organizations that have only one account plan.
-  - List all organizations that have the PASSWORDLESS feature set to true.
+## File Walkthrough:
+
+The project was divided into two sections: Javascript and SQL. While the CLI dislayed the results for both sections, you can delve deeper into the code to view the CSV Parsing methods, functions, and queries.
+The crux of my project lies in these files: 
+
+**Public Folder**
+- This folder contains two files: originalacc.csv and originalorg.csv. These CSV files were downloaded from the 'test dataset' in Google Sheets. 
+  - Note: If you want to test other CSV files outside of what was provided for the assignment, I recommend dropping them into this public folder. 
+
+**csvUtils Folder**
+- This folder contains two files: accountCSV.js and organizationCSV.js. These files contain the logic to parse files in the CSV format and account for nested JSON objects. 
+  - Note: Each file contains a csvPath variable. If you want to test other CSV files, you can replace the value of csvPath with the new file path.
+
+**Functions.js**
+- This file has the functions necessary to run the reports for retriving optimization settings, sorting organizations, returning a list of cancelled organizations, and returning organization records in JSON format. 
+
+**sqlQueries.sql**
+- This file has the sqlQueries for returning organizations without account plans, organizations with more than one account plan, organizations that have exactly one account plan, and organizations with the PASSWORDLESS features set to true. 
+
+
+## Afterword:
+
+Thank you for the opportunity to learn more about Smartrr and the Support Engineer Role. This project was interesting as there were considerations to be made at each step (e.g. developing a web application vs CLI application, utilizing different parsing methods). 
+
+Had I elected to pursue a web application, my approach would have involved leveraging React.js as the frontend framework and incorporating Material-UI for its dynamic styling capabilities. Furthermore, I would have taken the steps to deploy it and create a Docker image. On the backend, PostgreSQL would have been my preferred database, with a REST API employed for data retrieval from the account and organization tables.
+
+Thank you again for your time and consideration!

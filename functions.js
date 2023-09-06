@@ -4,30 +4,6 @@ const prompt = require('prompt-sync')();
 
 let organizationTable;
 let accountTable;
-
-// const shopifyDomain = document.getElementById('myShopifyDomain');
-// shopifyDomain.addEventListener('onClick', (e) => {
-//     let result = [];
-//     if (shopifyDomain === '' || shopifyDomain === null) {
-//         result.push('Shopify Domain Required')
-//     }
-//     if (result.length > 0) {
-//         e.preventDefault();
-//         //need the backend query here to get the optimization settings with shopify domain as the entry
-//     }
-// })
-
-// //Takes the value of an orgName and returns the organization record in JSON format.
-// const generateRecordButton = document.getElementById('generateRecordButton');
-// generateRecordButton.addEventListener('click', (e) => {
-//     const orgName = document.getElementById('orgName').value
-//     if (orgName === '') {
-//         console.log('Organization Name Required');
-//         return
-//     }
-
-// })
-
 let testDomain = 'test-account-2.myshopify.com';
 let testOrganizationRecord = 'Test Account 4'
 
@@ -47,7 +23,6 @@ function optimizationSettingFinder(myShopifyDomain) {
 // Question 2 Loops through all organizations and shows the date they were created(DD / MM / YYYY), their status, and planName sorted by oldest to newest.
 function sortOrganizationsFinder() {
     const sortedOrganizations = organizationTable.sort((a, b) => {
-        //Sorted by Date
         const dateA = new Date(a.createdDate);
         const dateB = new Date(b.createdDate);
         return dateA - dateB
@@ -68,7 +43,6 @@ function sortOrganizationsFinder() {
                 planName = matchedOrg['planName'];
             }
         });
-        //If you haven't found a single thing, return null for the status and planName:
         if (!found) {
             let name = organization['orgName'];
             let date = new Date(organization['createdDate'])
@@ -86,11 +60,10 @@ function sortOrganizationsFinder() {
 function cancelledOrganizations() {
     const cancelledAccounts = accountTable.filter((account) => {
         return account['status'] === 'CANCELLED'
-    }) //returns an array of accounts that are cancelled
+    })
     const namesOfOrganizations = cancelledAccounts.map((account) => {
         let cancelledId = account['organizationId'];
         for (let organization of organizationTable) {
-            //Iterating through organizations
             if (organization['id'] === cancelledId) {
                 return organization['orgName']
             }
@@ -111,6 +84,7 @@ function organizationRecord(orgName) {
 //Main function runs all of the questions
 async function main() {
     organizationTable = await csvOrganizationTable();
+    const validShopifyDomains = organizationTable.map(organization => organization.myShopifyDomain)
     accountTable = await csvAccountTable();
     // console.log(optimizationSettingFinder(testDomain))
     // console.log(sortOrganizationsFinder())
@@ -124,8 +98,14 @@ async function main() {
         switch (javascriptReport) {
             case '1':
                 const domain = prompt('Enter a Shopify Domain: ');
+                console.log("what are valid shopify domains ===> ", validShopifyDomains)
+                // if (!(domain in validShopifyDomains)) {
+                //     console.log('Invalid Shopify Domain Entered');
+                //     break;
+                // } else {
                 console.log('Optimization Settings: ', optimizationSettingFinder(domain));
                 break;
+            // }
             case '2':
                 console.log(sortOrganizationsFinder());
                 break;
