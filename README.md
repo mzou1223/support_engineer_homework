@@ -4,7 +4,7 @@ This Smartrr Support Engineer Javacript portion of the project is completed in a
 ## How to Run This Application:
 
 **Javascript Portion:**
-Assuming that you have cloned this repository, please navigate to the project directory (support_engineer_homework) to begin.
+Assuming that you have cloned this repository, please navigate to the project directory `cd support_engineer_homework` to begin.
 1. `npm i` to install all the dependencies.
 2. `node functions.js` to run the CLI application. 
 3. Follow the prompt and type in the choices you want to make. 
@@ -28,7 +28,7 @@ The crux of my project lies in these files:
 - This folder contains two files: [accountCSV.js](https://github.com/mzou1223/support_engineer_homework/blob/main/csvUtils/accountCSV.js) and [organizationCSV.js](https://github.com/mzou1223/support_engineer_homework/blob/main/csvUtils/organizationCSV.js). These files contain the logic to parse files in the CSV format and account for nested JSON objects. 
   - Note: Each file contains a `csvPath` variable. If you want to test other CSV files, you can replace the value of `csvPath` with the new file path.
 
-**Functions.js**
+**functions.js**
 - The [functions.js](https://github.com/mzou1223/support_engineer_homework/blob/main/functions.js) file has the functions necessary to run the reports for retriving optimization settings, sorting organizations, returning a list of cancelled organizations, and returning organization records in JSON format. 
 
 **sqlQueries.sql**
