@@ -21,6 +21,7 @@ GROUP BY account.organizationId, organization.orgName
 HAVING COUNT(*) = 1
 
 -- List all organizations that have the PASSWORDLESS feature set to true.
-SELECT organizationId
+SELECT organizationId, organization.orgName
 FROM account
-
+JOIN organization ON account.organizationId = organization.id
+WHERE features LIKE '%"PASSWORDLESS": true%';
