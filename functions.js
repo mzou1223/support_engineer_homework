@@ -1,3 +1,4 @@
+const chalk = require('chalk');
 const csvOrganizationTable = require('./csvUtils/organizationCSV');
 const csvAccountTable = require('./csvUtils/accountCSV');
 const prompt = require('prompt-sync')();

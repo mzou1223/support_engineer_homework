@@ -5,15 +5,15 @@ This Smartrr Support Engineer Javacript portion of the project is completed in a
 
 **Javascript Portion:**
 Assuming that you have cloned this repository, please navigate to the project directory (support_engineer_homework) to begin.
-1. npm i to install all the dependencies.
-2. node functions.js to run the CLI application. 
+1. `npm i` to install all the dependencies.
+2. `node functions.js` to run the CLI application. 
 3. Follow the prompt and type in the choices you want to make. 
 4. Press enter to get the results. 
 
 Note: If you want to exit, type in 'no' to the prompt that asks if you want to run another report.
 
 **SQL Portion**
-Use your SQL schema to test the queries located in sqlQueries.sql. These are compromised based on the assumption that there is a table named "organization" for the organization_orm and a table named "account" for the account_plan_orm.
+Use your SQL schema to test the queries located in [sqlQueries.sql](https://github.com/mzou1223/support_engineer_homework/blob/main/sqlQueries.sql). These are compromised based on the assumption that there is a table named `organization` for the organization_orm and a table named `account` for the account_plan_orm.
 
 ## File Walkthrough:
 
@@ -21,18 +21,18 @@ The project was divided into two sections: Javascript and SQL. While the CLI dis
 The crux of my project lies in these files: 
 
 **Public Folder:**
-- This folder contains two files: originalacc.csv and originalorg.csv. These CSV files were downloaded from the 'test dataset' in Google Sheets. 
+- This folder contains two files: [originalacc.csv](https://github.com/mzou1223/support_engineer_homework/blob/main/public/originalacc.csv) and [originalorg.csv](https://github.com/mzou1223/support_engineer_homework/blob/main/public/originalorg.csv). These CSV files were downloaded from the `test dataset` in Google Sheets. 
   - Note: If you want to test other CSV files outside of what was provided for the assignment, I recommend dropping them into this public folder. 
 
 **csvUtils Folder**
-- This folder contains two files: accountCSV.js and organizationCSV.js. These files contain the logic to parse files in the CSV format and account for nested JSON objects. 
-  - Note: Each file contains a csvPath variable. If you want to test other CSV files, you can replace the value of csvPath with the new file path.
+- This folder contains two files: [accountCSV.js](https://github.com/mzou1223/support_engineer_homework/blob/main/csvUtils/accountCSV.js) and [organizationCSV.js](https://github.com/mzou1223/support_engineer_homework/blob/main/csvUtils/organizationCSV.js). These files contain the logic to parse files in the CSV format and account for nested JSON objects. 
+  - Note: Each file contains a `csvPath` variable. If you want to test other CSV files, you can replace the value of `csvPath` with the new file path.
 
 **Functions.js**
-- This file has the functions necessary to run the reports for retriving optimization settings, sorting organizations, returning a list of cancelled organizations, and returning organization records in JSON format. 
+- The [functions.js](https://github.com/mzou1223/support_engineer_homework/blob/main/functions.js) file has the functions necessary to run the reports for retriving optimization settings, sorting organizations, returning a list of cancelled organizations, and returning organization records in JSON format. 
 
 **sqlQueries.sql**
-- This file has the sqlQueries for returning organizations without account plans, organizations with more than one account plan, organizations that have exactly one account plan, and organizations with the PASSWORDLESS features set to true. 
+- This [sqlQueries.sql](https://github.com/mzou1223/support_engineer_homework/blob/main/sqlQueries.sql) file has the sqlQueries for returning organizations without account plans, organizations with more than one account plan, organizations that have exactly one account plan, and organizations with the PASSWORDLESS features set to true. 
 
 
 ## Afterword:
