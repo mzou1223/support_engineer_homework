@@ -26,7 +26,7 @@ The crux of my project lies in these files:
 
 **csvUtils Folder**
 - This folder contains two files: [accountCSV.js](https://github.com/mzou1223/support_engineer_homework/blob/main/csvUtils/accountCSV.js) and [organizationCSV.js](https://github.com/mzou1223/support_engineer_homework/blob/main/csvUtils/organizationCSV.js). These files contain the logic to parse files in the CSV format and account for nested JSON objects. 
-  - Note: Each file contains a `csvPath` variable. If you want to test other CSV files, you can replace the value of `csvPath` with the new file path.
+  - Note: Each file contains a `csvPath` variable. If you want to test CSV files, you can replace the value of `csvPath` with the new file path.
 
 **functions.js**
 - The [functions.js](https://github.com/mzou1223/support_engineer_homework/blob/main/functions.js) file has the functions necessary to run the reports for retriving optimization settings, sorting organizations, returning a list of cancelled organizations, and returning organization records in JSON format. 

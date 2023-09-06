@@ -2,7 +2,7 @@ const { table } = require('console');
 const fs = require('fs')
 const csv = require('jquery-csv')
 const readline = require('readline');
-const csvPath = '/home/mzou1223/code/support_engineer_homework/public/originalacc.csv'
+const csvPath = 'public/originalacc.csv'
 
 function csvAccountTable(pathToCSVFile = csvPath) {
     console.log(pathToCSVFile);
