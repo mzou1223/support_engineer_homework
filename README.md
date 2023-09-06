@@ -1,5 +1,5 @@
 # Support Engineer Homework Overview
-This Smartrr Support Engineer Javacript portion of the project is completed in a CLI format using Node.js and npm. Please check that these are installed on your machine prior to running this application. The CLI prompts and functions were completed in one file, functions.js, for the reviewer's ease of access and efficiency.
+This Smartrr Support Engineer Javacript portion of the project is completed in a CLI format using Node.js and npm. Please check that these are installed on your machine prior to running this application. The CLI prompts and functions were completed in one file, [functions.js](https://github.com/mzou1223/support_engineer_homework/blob/main/functions.js), for the reviewer's ease of access and efficiency.
 
 ## How to Run This Application:
 
@@ -12,7 +12,7 @@ Assuming that you have cloned this repository, please navigate to the project di
 
 Note: If you want to exit, type in 'no' to the prompt that asks if you want to run another report.
 
-**SQL Portion**
+**SQL Portion:**
 Use your SQL schema to test the queries located in [sqlQueries.sql](https://github.com/mzou1223/support_engineer_homework/blob/main/sqlQueries.sql). These are compromised based on the assumption that there is a table named `organization` for the organization_orm and a table named `account` for the account_plan_orm.
 
 ## File Walkthrough:
