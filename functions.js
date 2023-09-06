@@ -86,10 +86,8 @@ async function main() {
     organizationTable = await csvOrganizationTable();
     const validShopifyDomains = organizationTable.map(organization => organization.myShopifyDomain)
     accountTable = await csvAccountTable();
-    // console.log(optimizationSettingFinder(testDomain))
-    // console.log(sortOrganizationsFinder())
-    // console.log(cancelledOrganizations())
-    // console.log(organizationRecord(testOrganizationRecord))
+    const validOrganizationNames = organizationTable.map(organization => organization.orgName);
+    console.log("validorganizationamems", validOrganizationNames)
 
     let playreport = true;
     while (playreport) {
@@ -98,14 +96,13 @@ async function main() {
         switch (javascriptReport) {
             case '1':
                 const domain = prompt('Enter a Shopify Domain: ');
-                console.log("what are valid shopify domains ===> ", validShopifyDomains)
-                // if (!(domain in validShopifyDomains)) {
-                //     console.log('Invalid Shopify Domain Entered');
-                //     break;
-                // } else {
-                console.log('Optimization Settings: ', optimizationSettingFinder(domain));
-                break;
-            // }
+                if (!validShopifyDomains.includes(domain)) {
+                    console.log('Invalid Shopify Domain Entered');
+                    break;
+                } else {
+                    console.log('Optimization Settings: ', optimizationSettingFinder(domain));
+                    break;
+                }
             case '2':
                 console.log(sortOrganizationsFinder());
                 break;
@@ -114,6 +111,10 @@ async function main() {
                 break;
             case '4':
                 const orgName = prompt('Enter an Organization Name: ');
+                if (!validOrganizationNames.includes(orgName)) {
+                    console.log('Invalid Organization Name Entered');
+                    break;
+                }
                 console.log('Organization Record: ', organizationRecord(orgName));
                 break;
             default:

@@ -3,7 +3,7 @@ This Smartrr Support Engineer Javacript portion of the project is completed in a
 
 ## How to Run This Application:
 
-**Javascript Portion**
+**Javascript Portion:**
 Assuming that you have cloned this repository, please navigate to the project directory (support_engineer_homework) to begin.
 1. npm i to install all the dependencies.
 2. node functions.js to run the CLI application. 
@@ -20,7 +20,7 @@ Use your SQL schema to test the queries located in sqlQueries.sql. These are com
 The project was divided into two sections: Javascript and SQL. While the CLI dislayed the results for both sections, you can delve deeper into the code to view the CSV Parsing methods, functions, and queries.
 The crux of my project lies in these files: 
 
-**Public Folder**
+**Public Folder:**
 - This folder contains two files: originalacc.csv and originalorg.csv. These CSV files were downloaded from the 'test dataset' in Google Sheets. 
   - Note: If you want to test other CSV files outside of what was provided for the assignment, I recommend dropping them into this public folder. 
 
