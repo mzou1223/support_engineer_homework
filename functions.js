@@ -1,4 +1,3 @@
-const chalk = require('chalk');
 const csvOrganizationTable = require('./csvUtils/organizationCSV');
 const csvAccountTable = require('./csvUtils/accountCSV');
 const prompt = require('prompt-sync')();
@@ -39,14 +38,14 @@ function sortOrganizationsFinder() {
                 found = true;
                 matchedOrg = account;
                 name = organization['orgName'];
-                date = new Date(organization['createdDate']);
+                date = new Date(organization['createdDate']).toLocaleDateString('en-GB');
                 status = matchedOrg['status']
                 planName = matchedOrg['planName'];
             }
         });
         if (!found) {
             let name = organization['orgName'];
-            let date = new Date(organization['createdDate'])
+            let date = new Date(organization['createdDate']).toLocaleDateString('en-GB');
             let status = null;
             let planName = null;
             return [name, date, status, planName]
@@ -88,38 +87,37 @@ async function main() {
     const validShopifyDomains = organizationTable.map(organization => organization.myShopifyDomain)
     accountTable = await csvAccountTable();
     const validOrganizationNames = organizationTable.map(organization => organization.orgName);
-    console.log("validorganizationamems", validOrganizationNames)
 
     let playreport = true;
     while (playreport) {
-        console.log('\n 1) Display optimization settings for a myShopifyDomain field. \n 2) Sort all organizations by oldest to newest and display creation date (DD/MM/YYYY), status, and plan name. \n 3) List all organizations whose status is cancelled. \n 4) Display organization record of orgName in JSON Format.')
+        console.log('\n 1) Display optimization settings for a myShopifyDomain field. \n 2) Sort all organizations by oldest to newest and display creation date (DD/MM/YYYY), status, and plan name. \n 3) List all organizations whose status is cancelled. \n 4) Display organization record of orgName in JSON Format.\n')
         const javascriptReport = prompt('Choose a report to run: ');
         switch (javascriptReport) {
             case '1':
                 const domain = prompt('Enter a Shopify Domain: ');
                 if (!validShopifyDomains.includes(domain)) {
-                    console.log('Invalid Shopify Domain Entered');
+                    console.log('\nInvalid Shopify Domain Entered');
                     break;
                 } else {
-                    console.log('Optimization Settings: ', optimizationSettingFinder(domain));
+                    console.log('\nOptimization Settings: ', optimizationSettingFinder(domain));
                     break;
                 }
             case '2':
-                console.log(sortOrganizationsFinder());
+                console.log('\nSorted Organizations By Oldest to Newest: ', sortOrganizationsFinder());
                 break;
             case '3':
-                console.log(cancelledOrganizations());
+                console.log('\nCancelled Organizations: ', cancelledOrganizations());
                 break;
             case '4':
                 const orgName = prompt('Enter an Organization Name: ');
                 if (!validOrganizationNames.includes(orgName)) {
-                    console.log('Invalid Organization Name Entered');
+                    console.log('\nInvalid Organization Name Entered');
                     break;
                 }
-                console.log('Organization Record: ', organizationRecord(orgName));
+                console.log('\nOrganization Record: ', organizationRecord(orgName));
                 break;
             default:
-                console.log('Invalid choice. Please enter 1, 2, 3, or 4.');
+                console.log('\nInvalid choice. Please enter 1, 2, 3, or 4.');
                 break;
         }
         const continueChoice = prompt('Do you want to run another report? (yes/no) ');
