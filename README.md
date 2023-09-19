@@ -1,5 +1,5 @@
 # Support Engineer Homework Overview
-This Smartrr Support Engineer Javacript portion of the project is completed in a CLI format using Node.js and npm. Please check that these are installed on your machine prior to running this application. The CLI prompts and functions were completed in one file, [functions.js](https://github.com/mzou1223/support_engineer_homework/blob/main/functions.js), for the reviewer's ease of access and efficiency.
+This Smartrr Support Engineer Javascript portion of the project is completed in a CLI format using Node.js and npm. Please check that these are installed on your machine prior to running this application. The CLI prompts and functions were completed in one file, [functions.js](https://github.com/mzou1223/support_engineer_homework/blob/main/functions.js), for the reviewer's ease of access and efficiency.
 
 ## How to Run This Application:
 
